@@ -36,7 +36,7 @@ PORT=10000
 
 #### Environment Variables:
 ```
-REACT_APP_API_URL=https://your-backend-url.onrender.com/api
+REACT_APP_API_URL=https://prxfm-1-0.onrender.com
 ```
 
 ### MongoDB Atlas Setup

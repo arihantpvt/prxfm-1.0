@@ -19,7 +19,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 
 // API configuration
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'https://prxfm-1-0.onrender.com';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
