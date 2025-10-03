@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-nunito bg-gradient-romantic min-h-screen;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-pacifico;
+  }
+}
+
+@layer components {
+  .btn-romantic {
+    @apply bg-gradient-to-r from-romantic-400 to-romantic-500 hover:from-romantic-500 hover:to-romantic-600 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+  
+  .btn-lavender {
+    @apply bg-gradient-to-r from-lavender-400 to-lavender-500 hover:from-lavender-500 hover:to-lavender-600 text-white font-medium py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+  
+  .card-romantic {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-romantic-200/50 p-6 transition-all duration-300 hover:shadow-xl hover:scale-105;
+  }
+  
+  .card-lavender {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-lavender-200/50 p-6 transition-all duration-300 hover:shadow-xl hover:scale-105;
+  }
+  
+  .input-romantic {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-romantic-200 focus:border-romantic-400 focus:ring-2 focus:ring-romantic-200 transition-all duration-300 bg-white/50 backdrop-blur-sm;
+  }
+  
+  .floating-hearts {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .floating-hearts::before {
+    content: '💕';
+    position: absolute;
+    top: -20px;
+    left: 10%;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .floating-hearts::after {
+    content: '💖';
+    position: absolute;
+    top: -20px;
+    right: 10%;
+    animation: float 3s ease-in-out infinite 1.5s;
+  }
+  
+  .sparkle {
+    position: relative;
+  }
+  
+  .sparkle::before {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    animation: sparkle 2s linear infinite;
+  }
+  
+  .heart-glow {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  
+  .pookie-mode {
+    @apply bg-gradient-hearts;
+  }
+  
+  .pookie-mode .card-romantic {
+    @apply border-2 border-romantic-300 shadow-2xl;
+  }
+  
+  .pookie-mode .btn-romantic {
+    @apply animate-bounce-gentle;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-romantic-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-romantic-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-romantic-500;
+}
+
+/* Floating animation for hearts */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(232, 93, 93, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(232, 93, 93, 0.8);
+  }
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Gentle bounce animation */
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
